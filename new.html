@@ -1,0 +1,205 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Table</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+      
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align:center;">Sample Data Table</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>class</th>
+                <th>Roll No.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        
+    </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data to Table</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #102211;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Enter Data</h2>
+
+     
+ 
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="text" id="city" placeholder="City" required>
+            <button type="submit" onclick="Hello()">Add to Table</button>
+  
+    </div>
+
+    <h2 style="text-align:center;">Data Table</h2>
+
+>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="satyam">
+          
+        </tbody>
+    </table>
+
+    <script>
+      
+        // document.getElementById("dataForm").addEventListener("submit", function(event) {
+        //     event.preventDefault(); 
+        
+function Hello(){
+            
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let city = document.getElementById("city").value;
+
+        
+            let newRow = document.createElement("tr");
+
+        
+            let nameCell = document.createElement("td");
+            nameCell.textContent = name;
+
+            let ageCell = document.createElement("td");
+            ageCell.textContent = age;
+
+            let cityCell = document.createElement("td");
+            cityCell.textContent = city;
+
+         
+            newRow.appendChild(nameCell);
+            newRow.appendChild(ageCell);
+            newRow.appendChild(cityCell);
+
+          
+            // document.querySelector("#dataTable tbody").appendChild(newRow);
+            document.getElementById("satyam").appendChild(newRow);
+
+           
+            document.getElementById("name").value = '';
+            document.getElementById("age").value = '';
+            document.getElementById("city").value = '';
+        };
+    </script>
+</body>
+
+</html>
+
+
